@@ -9,35 +9,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
-  <div class="container">
+  <div class="main-header">
     <!-- Header -->
     <div class="header">
       <div class="user-info">
         <img src="https://i.pravatar.cc/40" alt="User Avatar">
-        <span>Welcome, Ryan Gosling!</span>
+        <span>Welcome, Jacques!</span>
+      </div>
+      <div class = "header-searchbar">
+          <form action="/search" method="GET">
+            <input type="text" name="q" class="search-box" placeholder="Search...">
+          </form>
       </div>
       <div class="icons">
-        <span>⚙️</span>
-        <span>🔔</span>
+        🔔 ⚙️
       </div>
     </div>
-
+  </div>
+  
+  <div class="container">
     <!-- Tagline -->
-    <h2 class="tagline">Find the perfect Rambler for you.</h2>
+    <h2 class="tagline"><center>Find the perfect RAMbler for you.</center></h2>
 
     <!-- Quick Navigation -->
     <div class="quick-nav">
-      <div class="nav-button">Forum</div>
-      <div class="nav-button">Select</div>
-      <div class="nav-button">RAMble Wizard</div>
+      <div class="nav-button">💬<br>Forums</div>
+      <div class="nav-button">👨‍🏫<br>Tutors</div>
+      <div class="nav-button">🧙‍♂️<br>RAMble Wizard</div>
     </div>
 
-    <!-- Search Bar -->
-    <div class="search-bar">
-      <input type="text" placeholder="What do you want to learn?">
-    </div>
+    <hr>
 
     <!-- Subjects Grid -->
     <div class="subjects">
@@ -49,15 +51,24 @@
       <div class="subject">➕<span>Show More</span></div>
     </div>
 
-    <!-- Bottom Nav -->
-    <div class="bottom-nav">
-      <div class="nav-item">🏠<span>Home</span></div>
-      <div class="nav-item">👨‍🏫<span>Tutor</span></div>
-      <div class="nav-item">🧙<span>Wizard</span></div>
-      <div class="nav-item">💬<span>Forum</span></div>
-      <div class="nav-item">👤<span>Profile</span></div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-item"><span>🏠 Home</span></div>
+      <div class="sidebar-item"><span>👨‍🏫 Tutor</span></div>
+      <div class="sidebar-item"><span>🧙 Wizard</span></div>
+      <div class="sidebar-item"><span>💬 Forum</span></div>
+      <div class="sidebar-item"><span>👤 Profile</span></div>
+    </div>
+
+    <hr>
+    <div class="forum">
+      Forums
+      <div class="forum-posts">
+        
+      </div>
     </div>
   </div>
+
 
   
 </body>
