@@ -68,7 +68,44 @@
       </div>
     </div>
   </div>
+    <script>
+    //  subjects
+  const subjects = document.querySelectorAll('.subject');
+  subjects.forEach(function(subject) {
+    subject.addEventListener('click', function() {
+      console.log('Subject clicked:', subject.innerText);
+      window.location.href = 'subject.html';
+    });
+  });
 
+  // quick nav
+  const navButtons = document.querySelectorAll('.nav-button');
+  navButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      console.log('Nav button clicked:', button.innerText);
+      window.location.href = 'page.html';
+    });
+  });
+
+  // sidebar
+  const sidebarItems = document.querySelectorAll('.sidebar-item');
+  sidebarItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      console.log('Sidebar clicked:', item.innerText);
+      window.location.href = 'home.html';
+    });
+  });
+
+  // notifs n settings
+  const icons = document.querySelectorAll('.icons');
+  icons.forEach(function(icons) {
+    icons.addEventListener('click', function() {
+      console.log('Icon:', icons.innerText);
+      window.location.href = 'bonjeng.html';
+    });
+  });
+
+</script>
 
   
 </body>
