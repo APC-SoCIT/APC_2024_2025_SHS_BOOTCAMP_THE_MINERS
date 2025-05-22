@@ -6,19 +6,19 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #0e1c2b, #415a77);
+  background: linear-gradient(to bottom, #0e1c2b, #3d5570);
   color: white;
   min-height: 100vh;
 }
 
-
 .container {
-  background: linear-gradient(to bottom, #0e1c2b, #415a77);
+  background: linear-gradient(to bottom, #0e1c2b, #2e4157);
   border-radius: 20px;
   max-width: 1920px;
   padding: 30px;
-  margin-left: 100px;
-  margin-right: 100px;  
+  margin-left: 125px;
+  margin-right: 125px;
+  padding-bottom: 13rem;
 }
 
 .forum {
@@ -43,13 +43,43 @@ body {
   padding-bottom: 20px;
 }
 
+.search-container {
+  display: flex; 
+  align-items: center; 
+  background-color: #e0e0e0; 
+  border-radius: 50px;      
+  padding: 10px 20px;      
+  width: 100%;              
+  max-width: 750px;         
+}
+
+.search-icon {
+  color: #555;
+  font-size: 18px;
+  margin-right: 12px; 
+}
+
+.search-input {
+  border: none;             
+  outline: none;            
+  background-color: transparent; 
+  width: 100%;              
+  font-size: 16px;          
+  color: #333;             
+}
+
+.search-input::placeholder {
+  color: #333;
+  opacity: 1;
+}
+
 .user-info {
   display: flex;
   align-items: center;
   gap: 1rem;
   position: relative;
   left: 23px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .user-info img {
@@ -59,34 +89,48 @@ body {
 }
 
 .icons {
-  cursor: pointer;
   font-size: 45px;
   padding-right: 30px;
-  ;
+  display: flex;
+  flex-direction: row;  
+  justify-content: flex-end; 
+  gap: 25px;            
+  padding: 10px;
+}
+
+.buttons {
+  cursor: pointer;
+}
+
+.buttons:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 .tagline {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
 }
 
 .quick-nav {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding-left: 265px;
+  padding-right: 265px;
+  padding-top: 10px;
 }
 
 .nav-button {
-  background: linear-gradient(to bottom, #111e2b, #1d2c3d);
-  padding: 2rem;
+  background: linear-gradient(to bottom, #0d1720, #1a2431);
+  padding: 3.5rem;
   border-radius: 35px;
   text-align: center;
   flex: 1;
   font-size: 35px;
   cursor: pointer;
-  margin-bottom: 10px;
-  margin-right: 5rem;
-  margin-left: 5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .subjects {
