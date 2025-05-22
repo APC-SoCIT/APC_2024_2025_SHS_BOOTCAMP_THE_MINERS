@@ -6,21 +6,19 @@
 }
 
 body {
-  background-color: #0f001c;
+  background: linear-gradient(to bottom, #0e1c2b, #415a77);
   color: white;
   min-height: 100vh;
-  padding: 1rem;
 }
 
 
 .container {
   background: linear-gradient(to bottom, #0e1c2b, #415a77);
   border-radius: 20px;
-  max-width: 1620px;
+  max-width: 1920px;
   padding: 30px;
-  margin: 0 auto;
-  position: relative;
-  left: 100px;  
+  margin-left: 100px;
+  margin-right: 100px;  
 }
 
 .forum {
@@ -36,12 +34,13 @@ body {
 }
 
 .header {
+  background-color: #0f001c;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-  padding-top: 10px;
-  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .user-info {
@@ -60,10 +59,10 @@ body {
 }
 
 .icons {
-  margin-left: 250px;
   cursor: pointer;
   font-size: 45px;
   padding-right: 30px;
+  ;
 }
 
 .tagline {
@@ -79,14 +78,15 @@ body {
 
 .nav-button {
   background: linear-gradient(to bottom, #111e2b, #1d2c3d);
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 35px;
   text-align: center;
   flex: 1;
-  margin-right: 15px;
   font-size: 35px;
   cursor: pointer;
   margin-bottom: 10px;
+  margin-right: 5rem;
+  margin-left: 5rem;
 }
 
 .subjects {
@@ -111,25 +111,4 @@ body {
 
 .subject span {
   font-size: 28px;
-}
-
-.sidebar {
-  border-radius: 30px;
-  display: flex-start;
-  padding: 1rem 0;
-  position: fixed;
-  bottom: 22rem;
-  left: 0;
-  right: 107rem;
-  max-height: 1000px;
-  margin: auto;
-}
-
-.sidebar-item {
-  display: flex-start;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.75rem;
-  padding: 25px;
-  cursor: pointer;
 }
