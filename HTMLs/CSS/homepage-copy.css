@@ -100,11 +100,13 @@ body {
 
 .buttons {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .buttons:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+  transform: translateY(-5px);
 }
 
 .tagline {
@@ -131,6 +133,11 @@ body {
   cursor: pointer;
   margin-right: 1rem;
   margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: translateY(-5px);
 }
 
 .subjects {
@@ -151,8 +158,15 @@ body {
   justify-content: center;
   min-height: 80px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.subject:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transform: translateY(-5px);
 }
 
 .subject span {
-  font-size: 28px;
+  font-size: 30px;
 }

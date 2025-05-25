@@ -21,6 +21,11 @@ body {
   padding-bottom: 13rem;
 }
 
+.filter-icon {
+  padding-left: 10px;
+  cursor: pointer;
+}
+
 .header {
   background-color: #0f001c;
   display: flex;
@@ -35,10 +40,12 @@ body {
   display: flex; 
   align-items: center; 
   background-color: #e0e0e0; 
-  border-radius: 50px;          
+  border-radius: 50px;      
+  padding: 10px 20px;      
   width: 100%;              
   max-width: 750px;
-  padding-bottom: 100px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .search-icon {
@@ -61,6 +68,14 @@ body {
   opacity: 1;
 }
 
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
 .user-info {
   display: flex;
   align-items: center;
@@ -78,7 +93,6 @@ body {
 
 .icons {
   font-size: 45px;
-  padding-right: 30px;
   display: flex;
   flex-direction: row;  
   justify-content: flex-end; 
@@ -88,11 +102,13 @@ body {
 
 .buttons {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .buttons:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+  transform: translateY(-5px);
 }
 
 .tagline {
@@ -100,25 +116,70 @@ body {
   margin-bottom: 1rem;
 }
 
-.tutor-options {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  padding-left: 265px;
-  padding-right: 265px;
-  padding-top: 10px;
+.tutor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  padding-left: 200px;
 }
 
-.tutor-profile {
-  background: linear-gradient(to bottom, #0d1720, #1a2431);
-  padding: 3.5rem;
-  border-radius: 35px;
-  text-align: center;
-  flex: 1;
-  font-size: 35px;
-  cursor: pointer;
-  margin-right: 1rem;
-  margin-left: 1rem;
+.tutor-card {
+  display: flex;
+  align-items: center;
+  background-color: #1b2636;
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  gap: 16px;
+  transition: transform 0.3s ease;
+}
+
+.tutor-card:hover {
+  transform: translateY(-5px);
+}
+
+.tutor-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.tutor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tutor-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.tutor-role {
+  font-size: 14px;
+  color: #c0c0c0;
+  margin: 4px 0;
+}
+
+.tutor-price {
+  font-size: 16px;
+  color: #f4b400;
+  margin: 6px 0;
+}
+
+.tutor-price span {
+  color: #c0c0c0;
+}
+
+.tutor-rating {
+  font-size: 20px;
+  color: #ffc107;
 }
 
 .subjects {
@@ -126,6 +187,12 @@ body {
   justify-content: space-evenly;
   margin-bottom: 2rem;
   padding-top: 30px;
+}
+
+.subject:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transform: translateY(-5px);
 }
 
 .subject {
@@ -139,10 +206,11 @@ body {
   justify-content: center;
   min-height: 80px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .subject span {
-  font-size: 28px;
+  font-size: 30px;
 }
 
 

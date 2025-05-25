@@ -3,9 +3,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutors</title>
-    <link rel="stylesheet" href="CSS/homepage-copy.css">
+    <link rel="stylesheet" href="CSS/tutors-draft.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -16,7 +17,7 @@
             <div class="user-info">
                 <img src="https://i.pravatar.cc/40" alt="User Avatar">
                 <span>Welcome, Jacques!</span>
-        </div>
+            </div>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
             <input type="search" class="search-input" placeholder="Search">
@@ -34,10 +35,15 @@
     <h1 class="tagline"><center>Tutors</center></h1>
 
   <!--Tutors container-->
-    <div class="container"> 
-        <div class="search-container"> <!-- Tutors Searchbar -->
+    <div class="container">
+        <div class="search-wrapper">
+        <div class="search-container">
             <i class="fas fa-search search-icon"></i>
-            <input type="search" class="search-input" placeholder="Search tutors">
+            <input type="text" class="search-input" placeholder="Search tutors" />
+        </div>
+        <div class="filter-icon">
+            <i class="fa fa-filter filter-icon"></i>
+        </div>
         </div>
 
         <hr>
@@ -54,11 +60,53 @@
         </div>
 
         <hr>
-
-        <div class="quick-nav"> <!-- Tutor Profiles -->
-            <div class="nav-button">👨‍🏫<br>Kurt D. Cobain</div>
-            <div class="nav-button">🧙‍♂️<br>Richard Starkey</div>
+        <div class="tutor-grid">
+            <div class="tutor-card">
+                <img src="https://i.pravatar.cc/40" alt="Kurt D. Cobain" class="tutor-image" />
+                <div class="tutor-info">
+                    <h3 class="tutor-name">Kurt D. Cobain</h3>
+                    <p class="tutor-role">Philosophy Teacher</p>
+                    <p class="tutor-price">$17<span>/hour</span></p>
+                    <div class="tutor-rating">
+                    ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+            <div class="tutor-card">
+                <img src="https://i.pravatar.cc/40" alt="Richard Starkey" class="tutor-image" />
+                <div class="tutor-info">
+                    <h3 class="tutor-name">Richard Starkey</h3>
+                    <p class="tutor-role">Arts Teacher</p>
+                    <p class="tutor-price">$370<span>/hour</span></p>
+                    <div class="tutor-rating">
+                    ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+            <div class="tutor-card">
+                <img src="https://i.pravatar.cc/40" alt="Ethan Hawke" class="tutor-image" />
+                <div class="tutor-info">
+                    <h3 class="tutor-name">Ethan Hawke</h3>
+                    <p class="tutor-role">Math Teacher</p>
+                    <p class="tutor-price">$53<span>/hour</span></p>
+                    <div class="tutor-rating">
+                    ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+            <div class="tutor-card">
+                <img src="https://i.pravatar.cc/40" alt="Robert Sean Leonard" class="tutor-image" />
+                <div class="tutor-info">
+                    <h3 class="tutor-name">Robert Sean Leonard</h3>
+                    <p class="tutor-role">Biology Teacher</p>
+                    <p class="tutor-price">$53<span>/hour</span></p>
+                    <div class="tutor-rating">
+                    ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
     <script>
     </script>
