@@ -103,6 +103,7 @@ body {
 .buttons {
   cursor: pointer;
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 .buttons:hover {

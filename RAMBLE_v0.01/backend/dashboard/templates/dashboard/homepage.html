@@ -26,8 +26,8 @@
         <input type="search" class="search-input" placeholder="Search">
       </div>
       <div class="icons">
-        <div class="buttons">🏠</div>
-        <div class="buttons">👨‍🏫</div>
+        <a href="{% url 'homepage' %}" class="buttons">🏠</a>
+        <a href="{% url 'tutor' %}" class="buttons">👨‍🏫</a>
         <div class="buttons">🧙</div>
         <div class="buttons">🔔</div>
         <div class="buttons">⚙️</div>
@@ -41,7 +41,7 @@
 
     <!-- Quick Navigation -->
     <div class="quick-nav">
-      <div class="nav-button">👨‍🏫<br>Tutors</div>
+      <a href="{% url 'tutor' %}" class="nav-button">👨‍🏫<br>Tutors</a>
       <div class="nav-button">🧙‍♂️<br>RAMble<br>Wizard</div>
     </div>
 
