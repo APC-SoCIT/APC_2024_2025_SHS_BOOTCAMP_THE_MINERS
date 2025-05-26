@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #0e1c2b, #3d5570);
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    background: linear-gradient(to bottom, #0e1c2b, #2e4157);
+    border-radius: 20px;
+    max-width: 1920px;
+    padding: 10px; 
+    margin-left: 125px;
+    margin-right: 125px;
+    padding-bottom: 1rem;
+}
+
+.forum {
+    font-size: 35px;
+    padding-top: 20px;
+}
+
+.forum-posts {
+    background-color: #2d3f54;
+    border-radius: 30px;
+    padding: 100px;
+    margin-top: 20px;
+}
+
+.header {
+    background-color: #0f001c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.search-container {
+    display: flex; 
+    align-items: center; 
+    background-color: #e0e0e0; 
+    border-radius: 50px;      
+    padding: 10px 20px;      
+    width: 100%;              
+    max-width: 750px;         
+}
+
+.search-icon {
+    color: #555;
+    font-size: 18px;
+    margin-right: 12px; 
+}
+
+.search-input {
+    border: none;             
+    outline: none;            
+    background-color: transparent; 
+    width: 100%;              
+    font-size: 16px;          
+    color: #333;             
+}
+
+.search-input::placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    left: 23px;
+    font-size: 25px;
+}
+
+.user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.icons {
+    font-size: 45px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;  
+    justify-content: flex-end; 
+    gap: 25px;            
+    padding: 10px;
+}
+
+.buttons {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.buttons:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transform: translateY(-5px);
+}
+
+.tagline {
+    background-color: #0b141d;
+    font-size: 2.5rem;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.quick-questions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+    padding-top: 35px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.quick-questions button {
+    background-color: #475569;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+}
+
+.quick-questions button:hover {
+    background-color: #64748b;
+}
+
+.chat-input {
+    display: flex;
+    justify-content: center;
+    background: #0f172a;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    margin-bottom: 10px;
+    width: 1000px;
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+}
+
+.send-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.bot-intro {
+    font-size: 20px;
+    padding-left: 35px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
