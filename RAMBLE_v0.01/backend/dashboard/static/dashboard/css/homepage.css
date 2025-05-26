@@ -158,3 +158,11 @@ body {
 .subject span {
   font-size: 28px;
 }
+
+a.nav-button:link,
+a.nav-button:visited,
+a.nav-button:hover,
+a.nav-button:active {
+  text-decoration: none;
+  color: white;
+}
