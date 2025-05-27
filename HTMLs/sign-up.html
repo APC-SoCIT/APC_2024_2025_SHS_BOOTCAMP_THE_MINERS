@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login to RAMble</title>
+  <link rel="stylesheet" href="sign-up.css" />
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <img class="logo" src="C:\Users\USER\Documents\GitHub\APC_2024_2025_SHS_BOOTCAMP_THE_MINERS\RAMBLE_v0.01\backend\dashboard\static\dashboard\images\logo.png" alt="Logo" />
+    <button class="sign-up-btn">Sign Up</button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <img class="background-image" src="C:\Users\USER\Documents\GitHub\APC_2024_2025_SHS_BOOTCAMP_THE_MINERS\RAMBLE_v0.01\backend\dashboard\static\dashboard\images\background.png" alt="Background" />
+
+    <section class="login-form">
+      <!--TITLE HEADER-->
+      <h1 class="log-in-title">Create Account</h1>
+
+      <hr>
+      <!--NAME INPUT-->
+      <div class="name-container">
+        <div class="input-group">
+          <input type="text" id="first-name" name="first-name" placeholder="First Name*">
+        </div>
+        <div class="input-group">
+          <input type="text" id="last-name" name="last-name" placeholder="Last Name*">
+        </div>
+      </div>
+      <!--USERNAME INPUT-->
+      <div class="username">
+        <div class="input-group">
+          <input type="text" id="username" name="username" placeholder="Username*">
+        </div>
+      </div>
+      <!--MOBILE NO INPUT-->
+      <div class="phone-group">
+        <div class="input-group">
+          <select>
+            <option value="+63">PH +63</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <input type="tel" id="mobile-number" placeholder="Mobile Number*" required/>
+        </div>
+      </div>
+      <!--EMAIL INPUT-->
+      <div class="input-group">
+        <input type="email" id="email-address" placeholder="Email Address*" required/>
+      </div>
+      <!--MOBILE NO INPUT-->
+      <div class="confirm-pw">
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password*" required/>
+        </div>
+        <div class="input-group">
+          <input type="password-confirmation" id="password-confirmation" placeholder="Confirm Password*" required />
+        </div>
+      </div>
+      <div class="instructions">
+        Use 8 or more characters with letters, numbers, and symbols
+      </div>
+
+      <button class="next-btn">Next</button>
+    </section>
+  </main>
+
+  <!-- Bottom Bar -->
+  <footer class="bottom-bar">
+    ©2025 RAMble Corporation. RAMble, the RAMble logo are among our registered and unregistered trademarks in the Philippines, and other countries.
+  </footer>
+
+</body>
+</html>
