@@ -24,5 +24,8 @@ urlpatterns = [
     path('', views.login_view, name='login'),  # Show login page first when opening 127.0.0.1:8000/
     path('homepage/', views.homepage, name='homepage'),  # Redirect here after login
     path('tutor/', views.tutor, name='tutor'),
+    path('profile/', views.profile, name='profile'),
+    path('ramble_wizard/', views.ramble_wizard, name='ramble_wizard'),
+    path('sign_up/', views.sign_up, name='sign_up'),  # Include URLs from the RAMble app
 ]
 

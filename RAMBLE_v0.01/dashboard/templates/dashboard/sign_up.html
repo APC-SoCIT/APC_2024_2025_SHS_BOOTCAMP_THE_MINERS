@@ -1,0 +1,68 @@
+{% load static %}
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login to RAMble</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/sign_up.css' %}" />
+  </head>
+
+  <body>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <img class="logo" src="{% static 'dashboard/images/logo.png' %}" alt="Logo" />
+      <a href="{% url 'login' %}" class="sign-up-btn">Login</a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <img class="background-image" src="{% static 'dashboard/images/background.png' %}" alt="Background" />
+
+      <section class="login-form">
+        <h1 class="log-in-title">Create Account</h1>
+        <hr>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          <div class="name-container">
+            <div class="input-group">
+              {{ form.first_name.label_tag }}{{ form.first_name }}
+            </div>
+            <div class="input-group">
+              {{ form.last_name.label_tag }}{{ form.last_name }}
+            </div>
+          </div>
+          <div class="username">
+            <div class="input-group">
+              {{ form.username.label_tag }}{{ form.username }}
+            </div>
+          </div>
+          <div class="input-group">
+            {{ form.email.label_tag }}{{ form.email }}
+          </div>
+          <div class="confirm-pw">
+            <div class="input-group">
+              {{ form.password.label_tag }}{{ form.password }}
+            </div>
+            <div class="input-group">
+              {{ form.password_confirmation.label_tag }}{{ form.password_confirmation }}
+            </div>
+          </div>
+          <div class="instructions">
+            Use 8 or more characters with letters, numbers, and symbols
+          </div>
+          <button class="next-btn" type="submit">Next</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Bottom Bar -->
+    <footer class="bottom-bar">
+      ©2025 RAMble Corporation. RAMble, the RAMble logo are among our registered and unregistered trademarks in the Philippines, and other countries.
+    </footer>
+
+  </body>
+  </html>

@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
+from .forms import SignUpForm
 
 # Create your views here.
 
@@ -36,6 +37,24 @@ def login_view(request):
 # def logout_view(request):
   #  logout(request)
   #  return redirect('/')  # Redirects after logout
+def profile(request):
+    return render(request, 'dashboard/profile.html')
+
+def ramble_wizard(request):
+    return render(request, 'dashboard/ramble-wizard.html')
+
+def sign_up(request):
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)  # Create user object but don't save yet
+            user.set_password(form.cleaned_data['password'])  # Hash the password
+            user.save()  # Save user to database
+            login(request, user)  # Log the user in
+            return redirect('homepage')  # Redirect to homepage
+    else:
+        form = SignUpForm()
+    return render(request, 'dashboard/sign_up.html', {'form': form})
 
 def tutor(request):
     return render(request, 'dashboard/tutor.html')
