@@ -24,19 +24,30 @@
     <section class="login-form">
       <h1 class="log-in-title">Log In</h1>
 
-      <div class="input-group">
-        <label for="email">Email Address</label>
-        <input id="email" type="email" />
+  <!-- Show error message if login failed -->
+  {% if error %}
+    <p class="error-message" style="color: red; font-weight: bold;">{{ error }}</p>
+  {% endif %}
+
+    <p class="welcome-message">Welcome back! Please log in to your account.</p>
+    <p class="privacy-policy">By logging in, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</p>
+
+    <form method="POST" action="">
+    {% csrf_token %}
+
+       <div class="input-group">
+        <label for="username_or_email">Username or Email</label>
+        <input id="username_or_email" name="username" type="text" placeholder="Enter your username or email" required />
       </div>
 
       <div class="input-group">
         <label for="password">Password</label>
-        <input id="password" type="password" />
+        <input id="password" name="password" type="password" required />
       </div>
 
       <div class="forgot-password">Forgot your password?</div>
 
-      <button class="next-btn">Next</button>
+      <button class="next-btn" type="submit">Next</button>
     </section>
   </main>
 

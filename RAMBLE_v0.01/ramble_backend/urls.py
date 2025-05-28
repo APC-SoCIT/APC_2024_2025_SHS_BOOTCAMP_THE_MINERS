@@ -15,13 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # kurt added these
 from dashboard import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name='homepage'),
-    path('login/', views.login_view, name='login'),
+    path('', views.login_view, name='login'),  # Show login page first when opening 127.0.0.1:8000/
+    path('homepage/', views.homepage, name='homepage'),  # Redirect here after login
     path('tutor/', views.tutor, name='tutor'),
 ]
+
