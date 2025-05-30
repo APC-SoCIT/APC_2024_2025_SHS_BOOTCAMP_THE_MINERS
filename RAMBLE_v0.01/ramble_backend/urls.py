@@ -27,5 +27,6 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('ramble_wizard/', views.ramble_wizard, name='ramble_wizard'),
     path('sign_up/', views.sign_up, name='sign_up'),  # Include URLs from the RAMble app
+    path('', include('dashboard.urls')),
 ]
 

@@ -5,8 +5,8 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from .forms import SignUpForm
-
-# Create your views here.
+from RAMble.models import Tutor, Subject
+from django.shortcuts import get_object_or_404
 
 def homepage(request):
     return render(request, 'dashboard/homepage.html')
@@ -57,4 +57,15 @@ def sign_up(request):
     return render(request, 'dashboard/sign_up.html', {'form': form})
 
 def tutor(request):
-    return render(request, 'dashboard/tutor.html')
+    subject_id = request.GET.get('subject')
+    if subject_id:
+        tutors = Tutor.objects.filter(subjects__id=subject_id)
+    else:
+        tutors = Tutor.objects.all()
+    subjects = Subject.objects.all()
+    return render(request, 'dashboard/tutor.html', {'tutors': tutors, 'subjects': subjects})
+
+
+def tutor_profile(request, tutor_id):
+    tutor = get_object_or_404(Tutor, id=tutor_id)
+    return render(request, 'dashboard/profile.html', {'tutor': tutor})

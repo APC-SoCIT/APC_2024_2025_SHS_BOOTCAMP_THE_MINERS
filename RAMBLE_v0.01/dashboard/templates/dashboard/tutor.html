@@ -52,61 +52,31 @@
 
             <!-- Subjects Grid -->
         <div class="subjects">
-            <div class="subject">📘<span>English</span></div>
-            <div class="subject">⚗️<span>Chemistry</span></div>
-            <div class="subject">🧮<span>Math</span></div>
-            <div class="subject">🌿<span>Biology</span></div>
-            <div class="subject">🔬<span>Physics</span></div>
-            <div class="subject">🏛️<span>History</span></div>
-            <div class="subject">➕<span>Show More</span></div>
+        {% for subject in subjects %}
+            <a href="?subject={{ subject.id }}" class="subject">
+            {{ subject.emoji }} {{ subject.name }}
+            </a>
+        {% endfor %}
+            <a href="{% url 'tutor' %}" class="subject">Show All</a>
         </div>
 
         <hr>
         <div class="tutor-grid">
-            <div class="tutor-card">
-                <img src="https://i.pravatar.cc/40" alt="Kurt D. Cobain" class="tutor-image" />
-                <div class="tutor-info">
-                    <h3 class="tutor-name">Kurt D. Cobain</h3>
-                    <p class="tutor-role">Philosophy Teacher</p>
-                    <p class="tutor-price">$17<span>/hour</span></p>
-                    <div class="tutor-rating">
-                    ⭐⭐⭐⭐⭐
+            {% for tutor in tutors %}
+            <a href="{% url 'tutor_profile' tutor.id %}" class="tutor-card-link">
+                <div class="tutor-card">
+                    <img src="https://i.pravatar.cc/40" alt="{{ tutor.full_name }}" class="tutor-image" />
+                    <div class="tutor-info">
+                        <h3 class="tutor-name">{{ tutor.full_name }}</h3>
+                        <p class="tutor-role">{{ tutor.user.get_full_name }}</p>
+                        <p class="tutor-price">${{ tutor.rate_per_hour }}<span>/hour</span></p>
+                        <div class="tutor-rating">
+                        ⭐⭐⭐⭐⭐
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tutor-card">
-                <img src="https://i.pravatar.cc/40" alt="Richard Starkey" class="tutor-image" />
-                <div class="tutor-info">
-                    <h3 class="tutor-name">Richard Starkey</h3>
-                    <p class="tutor-role">Arts Teacher</p>
-                    <p class="tutor-price">$370<span>/hour</span></p>
-                    <div class="tutor-rating">
-                    ⭐⭐⭐⭐⭐
-                    </div>
-                </div>
-            </div>
-            <div class="tutor-card">
-                <img src="https://i.pravatar.cc/40" alt="Ethan Hawke" class="tutor-image" />
-                <div class="tutor-info">
-                    <h3 class="tutor-name">Ethan Hawke</h3>
-                    <p class="tutor-role">Math Teacher</p>
-                    <p class="tutor-price">$53<span>/hour</span></p>
-                    <div class="tutor-rating">
-                    ⭐⭐⭐⭐⭐
-                    </div>
-                </div>
-            </div>
-            <div class="tutor-card">
-                <img src="https://i.pravatar.cc/40" alt="Robert Sean Leonard" class="tutor-image" />
-                <div class="tutor-info">
-                    <h3 class="tutor-name">Robert Sean Leonard</h3>
-                    <p class="tutor-role">Biology Teacher</p>
-                    <p class="tutor-price">$53<span>/hour</span></p>
-                    <div class="tutor-rating">
-                    ⭐⭐⭐⭐⭐
-                    </div>
-                </div>
-            </div>
+            </a>
+            {% endfor %}
         </div>
 
     </div>

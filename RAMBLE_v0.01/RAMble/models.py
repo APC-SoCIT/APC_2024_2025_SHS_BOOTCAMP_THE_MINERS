@@ -1,8 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+# Create your models here.  
+class Subject(models.Model):
+    name = models.CharField(max_length=100)
+    emoji = models.CharField(max_length=5, default="📚")  
 
+    def __str__(self):
+        return f"{self.emoji} {self.name}"
+    
 class Tutor(models.Model):
     # Connect Tutor to a Django User
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -11,7 +17,7 @@ class Tutor(models.Model):
     full_name = models.CharField(max_length=100)
     rating = models.FloatField(default=0.0) 
     rate_per_hour = models.DecimalField(max_digits=6, decimal_places=2)
-
+    subjects = models.ManyToManyField(Subject, related_name='tutors')
     def __str__(self):
         return self.full_name
     
