@@ -28,7 +28,11 @@ class Booking(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
     date = models.DateField()
     time = models.TimeField()
-    status = models.CharField(max_length=10, choices=[('pending', 'Pending'), ('accepted', 'Accepted'), ('declined', 'Declined')], default='pending')
+    status = models.CharField(
+        max_length=10,
+        choices=[('pending', 'Pending'), ('accepted', 'Accepted'), ('declined', 'Declined')],
+        default='pending'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
 
 

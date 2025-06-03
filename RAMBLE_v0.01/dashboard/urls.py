@@ -1,3 +1,9 @@
+"""
+This is the URL configuration for the dashboard app.
+It defines routes specific to dashboard features (tutors, bookings, etc).
+These are included in the main project URLs via `include('dashboard.urls')`.
+"""
+
 from django.urls import path
 from . import views
 
