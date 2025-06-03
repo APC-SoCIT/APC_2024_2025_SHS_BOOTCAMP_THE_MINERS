@@ -17,7 +17,7 @@
         <div class="header">
             <div class="user-info">
                 <img src="https://i.pravatar.cc/40" alt="User Avatar">
-                <span>Welcome, Jacques!</span>
+                <span>Welcome, {{ user.first_name|default:user.username }}!</span>
             </div>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>

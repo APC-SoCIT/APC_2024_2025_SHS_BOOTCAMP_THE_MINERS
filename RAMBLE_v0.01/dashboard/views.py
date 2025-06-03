@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from .forms import SignUpForm
-from RAMble.models import Tutor, Subject
+from RAMble.models import Tutor, Subject, Booking
 from django.shortcuts import get_object_or_404
+from RAMble.forms import BookingForm
+from django.core.mail import send_mail
+from django.contrib import messages
 
 def homepage(request):
     return render(request, 'dashboard/homepage.html')
@@ -65,7 +67,56 @@ def tutor(request):
     subjects = Subject.objects.all()
     return render(request, 'dashboard/tutor.html', {'tutors': tutors, 'subjects': subjects})
 
-
 def tutor_profile(request, tutor_id):
     tutor = get_object_or_404(Tutor, id=tutor_id)
-    return render(request, 'dashboard/profile.html', {'tutor': tutor})
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.tutor = tutor
+            booking.student = request.user
+            booking.save()
+            # Optionally send email here
+            messages.success(request, "Booking request sent!")
+            return redirect('tutor_profile', tutor_id=tutor.id)
+    else:
+        form = BookingForm()
+    return render(request, 'dashboard/profile.html', {'tutor': tutor, 'form': form})
+
+def tutor_by_subject(request, subject_id):
+    subject = get_object_or_404(Subject, id=subject_id)
+    tutors = Tutor.objects.filter(subjects=subject)
+    subjects = Subject.objects.all()
+    return render(request, 'dashboard/tutor.html', {
+        'tutors': tutors,
+        'subjects': subjects,
+        'selected_subject': subject,
+    })
+
+@login_required
+def book_tutor(request, tutor_id):
+    tutor = get_object_or_404(Tutor, id=tutor_id)
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.tutor = tutor
+            booking.student = request.user
+            booking.save()
+            send_mail(
+                'New Booking Request',
+                f'You have a new booking request from {request.user.username} for {booking.date} at {booking.time}.',
+                'noreply@ramble.com',
+                [tutor.user.email],
+            )
+            return redirect('booking_success')
+    else:
+        form = BookingForm()
+    return render(request, 'dashboard/book_tutor.html', {'form': form, 'tutor': tutor})
+
+@login_required
+def tutor_bookings(request):
+    # Assumes the logged-in user is a Tutor (adjust as needed)
+    tutor = request.user.tutor
+    bookings = Booking.objects.filter(tutor=tutor).order_by('-created_at')
+    return render(request, 'dashboard/tutor_bookings.html', {'bookings': bookings})

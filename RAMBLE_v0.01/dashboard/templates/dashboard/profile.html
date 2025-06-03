@@ -17,7 +17,7 @@
     <div class="header">
       <div class="user-info">
         <img src="https://i.pravatar.cc/40" alt="User Avatar">
-        <span>Welcome, Jacques!</span>
+        <span>Welcome, {{ user.first_name|default:user.username }}!</span>
       </div>
       <div class="search-container">
         <i class="fas fa-search search-icon"></i>
@@ -28,7 +28,7 @@
         <a href="{% url 'tutor' %}" class="buttons">👨‍🏫</a>
         <div class="buttons">🧙</div>
         <div class="buttons">🔔</div>
-        <div class="buttons">⚙️</div>
+        <div class="buttons">⚙️</div> 
       </div>
     </div>
   </div>
@@ -39,21 +39,36 @@
       <div class="split-container">
         <div class="left-card">
           <img src="https://cdn.discordapp.com/avatars/722059194794115092/74024315bd3bc41ef62a5a07ed8daffa.webp?size=1024" class="avatar" />
-          <h1>Kurt D. Cobain</h1>
-          <p>kurtcobain@gmail.com</p>
-          <p>Philosophy Teacher</p>
-          <h1 class="rate">$17/hour</h1>
-          <div class="stars">⭐⭐⭐⭐⭐</div>
+            <h1>{{ tutor.full_name }}</h1>
+          <p>{{ tutor.user.email }}</p>
+          <p>{{ tutor.user.get_full_name }}</p>
+          <p>Subjects: 
+            {% for subject in tutor.subjects.all %}
+              {{ subject.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+          <h1 class="rate">${{ tutor.rate_per_hour }}/hour</h1>
+          <div class="stars">
+            Rating: {{ tutor.rating }} ⭐
+          </div>
         </div>
 
         <div class="right-card">
           <h2>About</h2>
-          <p>i am in pure agony and despair</p>
-          <button class="contact-btn">Contact</button>
+          <p>{{ tutor.about }}</p>
+          <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Book</button>
+          </form>
         </div>
-      </div>
+      </div>  
+    </div>
 
-
-  
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
 </body>
 </html>

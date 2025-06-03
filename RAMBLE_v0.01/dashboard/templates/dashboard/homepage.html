@@ -19,7 +19,7 @@
     <div class="header">
       <div class="user-info">
         <img src="https://i.pravatar.cc/40" alt="User Avatar">
-        <span>Welcome, Jacques!</span>
+        <span>Welcome, {{ user.first_name|default:user.username }}!</span>
       </div>
       <div class="search-container">
         <i class="fas fa-search search-icon"></i>
@@ -49,13 +49,13 @@
 
     <!-- Subjects Grid -->
     <div class="subjects">
-      <div class="subject">📘<span>English</span></div>
-      <div class="subject">⚗️<span>Chemistry</span></div>
-      <div class="subject">🧮<span>Math</span></div>
-      <div class="subject">🌿<span>Biology</span></div>
-      <div class="subject">🔬<span>Physics</span></div>
-      <div class="subject">🏛️<span>History</span></div>
-      <div class="subject">➕<span>Show More</span></div>
+      <a href="{% url 'tutor_by_subject' subject_id=1 %}" class="subject">📘 English</a>
+      <a href="{% url 'tutor_by_subject' subject_id=2 %}" class="subject">⚗️ Chemistry</a>
+      <a href="{% url 'tutor_by_subject' subject_id=3 %}" class="subject">🧮 Math</a>
+      <a href="{% url 'tutor_by_subject' subject_id=4 %}" class="subject">🌿 Biology</a>
+      <a href="{% url 'tutor_by_subject' subject_id=5 %}" class="subject">🔬 Physics</a>
+      <a href="{% url 'tutor_by_subject' subject_id=6 %}" class="subject">🏛️ History</a>
+      <a href="{% url 'tutor' %}" class="subject">➕ Show All</a>
     </div>
 
     <hr>

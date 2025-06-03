@@ -76,12 +76,16 @@ WSGI_APPLICATION = 'ramble_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # or 'mysql.connector.django' if you use mysql-connector-python
+        'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'ramble_db',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'init_command': "SET NAMES 'utf8mb4'",
+        },
     }
 }
 
