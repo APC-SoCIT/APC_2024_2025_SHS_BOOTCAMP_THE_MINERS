@@ -51,6 +51,19 @@
               {{ form.password_confirmation.label_tag }}{{ form.password_confirmation }}
             </div>
           </div>
+          <!-- Add this block for the tutor checkbox -->
+          <div class="input-group">
+            <label>
+              <input type="checkbox" name="is_tutor" id="id_is_tutor" {% if form.is_tutor.value %}checked{% endif %}>
+              Register as Tutor
+            </label>
+          </div>
+          <div class="input-group" id="rate-group" style="display:none;">
+            {{ form.rate_per_hour.label_tag }}{{ form.rate_per_hour }}
+          </div>
+          <div class="input-group" id="subjects-group" style="display:none;">
+            {{ form.subjects.label_tag }}{{ form.subjects }}
+          </div>
           <div class="instructions">
             Use 8 or more characters with letters, numbers, and symbols
           </div>
@@ -63,6 +76,25 @@
     <footer class="bottom-bar">
       ©2025 RAMble Corporation. RAMble, the RAMble logo are among our registered and unregistered trademarks in the Philippines, and other countries.
     </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tutorCheckbox = document.getElementById('id_is_tutor');
+  const rateGroup = document.getElementById('rate-group');
+  const subjectsGroup = document.getElementById('subjects-group');
+  function toggleTutorFields() {
+    if (tutorCheckbox.checked) {
+      rateGroup.style.display = '';
+      subjectsGroup.style.display = '';
+    } else {
+      rateGroup.style.display = 'none';
+      subjectsGroup.style.display = 'none';
+    }
+  }
+  tutorCheckbox.addEventListener('change', toggleTutorFields);
+  toggleTutorFields();
+});
+</script>
 
   </body>
   </html>

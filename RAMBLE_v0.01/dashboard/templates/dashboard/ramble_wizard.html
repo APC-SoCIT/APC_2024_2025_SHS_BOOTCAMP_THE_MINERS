@@ -25,9 +25,9 @@
             <input type="search" class="search-input" placeholder="Search">
         </div>
         <div class="icons">
-            <div class="buttons">🏠</div>
-            <div class="buttons">👨‍🏫</div>
-            <div class="buttons">🧙</div>
+            <a href="{% url 'homepage' %}" class="buttons">🏠</a>
+            <a href="{% url 'tutor' %}" class="buttons">👨‍🏫</a>
+            <a href="{% url 'ramble_wizard' %}" class="buttons">🧙</a>
             <div class="buttons">🔔</div>
             <div class="buttons">⚙️</div>
         </div>
@@ -43,21 +43,50 @@
             or press on of the buttons to get started.
         </div>
         <div class="chat-container">
-            <div class="quick-questions">
-                <button>How to navigate RAMble?</button>
-                <button>Can you take down notes?</button>
-                <button>Where are the tutors?</button>
-                <button>Best study habits?</button>
-            </div>
-
+            <div id="chat-messages" style="height:300px; overflow-y:auto; background:#222; color:#fff; padding:10px; border-radius:10px; margin-bottom:10px;"></div>
             <div class="chat-input">
-                <input type="text" placeholder="Type something..." />
-                <button class="send-btn">➤</button>
+                <input type="text" id="chat-input" placeholder="Type something..." style="width:80%; padding:10px; border-radius:5px;">
+                <button id="send-btn" class="send-btn">➤</button>
             </div>
         </div>
     </div>
 
   <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    const chatMessages = document.getElementById('chat-messages');
+
+    function appendMessage(sender, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    sendBtn.addEventListener('click', function() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        appendMessage('You', message);
+        chatInput.value = '';
+        fetch('http://127.0.0.1:5000/predict', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({message: message})
+        })
+        .then(response => response.json())
+        .then(data => {
+            appendMessage('RAMble Wizard', data.answer);
+        })
+        .catch(() => {
+            appendMessage('RAMble Wizard', 'Sorry, I could not connect to the chatbot.');
+        });
+    });
+
+    chatInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') sendBtn.click();
+    });
+});
   </script>
   
 </body>

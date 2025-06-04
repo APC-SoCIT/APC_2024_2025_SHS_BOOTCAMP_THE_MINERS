@@ -38,7 +38,7 @@ def profile(request):
 
 # --- RAMble Wizard chatbot page ---
 def ramble_wizard(request):
-    return render(request, 'dashboard/ramble-wizard.html')
+    return render(request, 'dashboard/ramble_wizard.html')
 
 # --- User sign-up view ---
 def sign_up(request):
@@ -49,6 +49,14 @@ def sign_up(request):
             user = form.save(commit=False)  # Create user object but don't save yet
             user.set_password(form.cleaned_data['password'])  # Hash the password
             user.save()  # Save user to database
+            # If the user checked "Register as Tutor", create a Tutor entry
+            if form.cleaned_data.get('is_tutor'):
+                tutor = Tutor.objects.create(
+                    user=user,
+                    full_name=f"{user.first_name} {user.last_name}",
+                    rate_per_hour=form.cleaned_data.get('rate_per_hour')
+                )
+                tutor.subjects.set(form.cleaned_data.get('subjects'))
             login(request, user)  # Log the user in
             return redirect('homepage')  # Redirect to homepage
     else:
