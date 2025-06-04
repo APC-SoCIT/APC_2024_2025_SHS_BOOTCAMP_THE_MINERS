@@ -1,13 +1,11 @@
 {% load static %}
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAMble Dashboard</title>
-  
-  <!-- this loads local CSS file with django static -->
-  <link rel="stylesheet" href="{% static 'dashboard/css/homepage.css' %}">
+  <link rel="stylesheet" href="{% static 'dashboard/css/user-profile.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,38 +32,26 @@
           <div class="dropdown-menu" id="dropdownMenu" style="display:none;">
             <a href="{% url 'user_profile' %}">Profile</a>
             <a href="{% url 'logout' %}">Logout</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
   
   <div class="container">
-    <!-- Tagline -->
-    <h1 class="tagline"><center>Find the perfect RAMbler for you.</center></h1>
-
-    <!-- Quick Navigation -->
-    <div class="quick-nav">
-      <a href="{% url 'tutor' %}" class="nav-button">👨‍🏫<br>Tutors</a>
-      <div class="nav-button">🧙‍♂️<br>RAMble<br>Wizard</div>
-    </div>
-
-    <hr>
-
-    <!-- Subjects Grid -->
-    <div class="subjects">
-      <a href="{% url 'tutor_by_subject' subject_id=1 %}" class="subject">📘 English</a>
-      <a href="{% url 'tutor_by_subject' subject_id=2 %}" class="subject">⚗️ Chemistry</a>
-      <a href="{% url 'tutor_by_subject' subject_id=3 %}" class="subject">🧮 Math</a>
-      <a href="{% url 'tutor_by_subject' subject_id=4 %}" class="subject">🌿 Biology</a>
-      <a href="{% url 'tutor_by_subject' subject_id=5 %}" class="subject">🔬 Physics</a>
-      <a href="{% url 'tutor_by_subject' subject_id=6 %}" class="subject">🏛️ History</a>
-      <a href="{% url 'tutor' %}" class="subject">➕ Show All</a>
-    </div>
-
-    <hr>
-
-    </div>
-  </div>
+    <div class="profile-banner">
+      <img src="https://media.discordapp.net/attachments/1277083799284617287/1376174363812036648/Screenshot_2025-05-25_201554.png?ex=68345dc0&is=68330c40&hm=96c0d20d51edf849fcbb196d3e6ce65f8e787a7b8f8ba92e34a35ac4999a1d2b&=&format=webp&quality=lossless" alt="Profile Banner" class="banner-img">
+      <div class="split-container">
+        <div class="left-card">
+          <img src="https://cdn.discordapp.com/avatars/722059194794115092/74024315bd3bc41ef62a5a07ed8daffa.webp?size=1024" class="avatar" />
+          <h1>{{ user.get_full_name|default:user.username }}</h1>
+          <p class="username">@{{ user.username }}</p>
+          <p class="user-email">{{ user.email }}</p>
+          <p class="joined-date">Joined {{ user.date_joined|date:"F Y" }}</p>
+        </div>
+        </div>
+      </div>
+  
   <script>
 document.addEventListener('DOMContentLoaded', function() {
   const dropdownToggle = document.getElementById('settingsDropdown');
@@ -78,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdownMenu.style.display = 'none';
   });
 });
-  </script>
-
-  
+</script>
 </body>
 </html>

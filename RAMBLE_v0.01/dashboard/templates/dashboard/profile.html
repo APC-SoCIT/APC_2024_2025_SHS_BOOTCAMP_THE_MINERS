@@ -26,9 +26,13 @@
       <div class="icons">
         <a href="{% url 'homepage' %}" class="buttons">🏠</a>
         <a href="{% url 'tutor' %}" class="buttons">👨‍🏫</a>
-        <div class="buttons">🧙</div>
-        <div class="buttons">🔔</div>
-        <div class="buttons">⚙️</div> 
+        <a href="{% url 'ramble_wizard' %}" class="buttons">🧙</a>
+        <div class="dropdown">
+          <div class="buttons dropdown-toggle" id="settingsDropdown">⚙️</div>
+          <div class="dropdown-menu" id="dropdownMenu" style="display:none;">
+            <a href="{% url 'user_profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
       </div>
     </div>
   </div>
@@ -72,3 +76,17 @@
     {% endif %}
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownToggle = document.getElementById('settingsDropdown');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  dropdownToggle.addEventListener('click', function(e) {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    e.stopPropagation();
+  });
+  document.addEventListener('click', function() {
+    dropdownMenu.style.display = 'none';
+  });
+});
+</script>

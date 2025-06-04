@@ -32,9 +32,28 @@ def login_view(request):
             error = "Invalid credentials"
     return render(request, 'dashboard/login.html', {'error': error})
 
-# --- Profile view (not used for booking, just renders the profile page) ---
-def profile(request):
-    return render(request, 'dashboard/profile.html')
+# --- User profile page (for dropdown) ---
+@login_required
+def user_profile(request):
+    return render(request, 'dashboard/user-profile.html')
+
+# --- Tutor profile page (for booking etc.) ---
+def profile(request, tutor_id=None):
+    # Shows a tutor's profile and handles booking form submission on the same page
+    tutor = get_object_or_404(Tutor, id=tutor_id) if tutor_id else None
+    if request.method == 'POST' and tutor:
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.tutor = tutor
+            booking.student = request.user
+            booking.save()
+            # Optionally send email here
+            messages.success(request, "Booking request sent!")
+            return redirect('profile', tutor_id=tutor.id)
+    else:
+        form = BookingForm()
+    return render(request, 'dashboard/profile.html', {'tutor': tutor, 'form': form})
 
 # --- RAMble Wizard chatbot page ---
 def ramble_wizard(request):
@@ -73,24 +92,6 @@ def tutor(request):
         tutors = Tutor.objects.all()
     subjects = Subject.objects.all()
     return render(request, 'dashboard/tutor.html', {'tutors': tutors, 'subjects': subjects})
-
-# --- Individual tutor profile and booking form ---
-def tutor_profile(request, tutor_id):
-    # Shows a tutor's profile and handles booking form submission on the same page
-    tutor = get_object_or_404(Tutor, id=tutor_id)
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            booking = form.save(commit=False)
-            booking.tutor = tutor
-            booking.student = request.user
-            booking.save()
-            # Optionally send email here
-            messages.success(request, "Booking request sent!")
-            return redirect('tutor_profile', tutor_id=tutor.id)
-    else:
-        form = BookingForm()
-    return render(request, 'dashboard/profile.html', {'tutor': tutor, 'form': form})
 
 # --- Tutors by subject view ---
 def tutor_by_subject(request, subject_id):

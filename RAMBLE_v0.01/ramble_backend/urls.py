@@ -24,6 +24,7 @@ It routes incoming HTTP requests to the correct app-level URLs or views.
 from django.contrib import admin
 from django.urls import path, include
 from dashboard import views  # Import views for direct mapping
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Django admin
@@ -33,5 +34,7 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),  # User profile
     path('ramble_wizard/', views.ramble_wizard, name='ramble_wizard'),  # Chatbot
     path('sign_up/', views.sign_up, name='sign_up'),  # Registration
+    path('user-profile/', views.user_profile, name='user_profile'),  # User's own profile
     path('', include('dashboard.urls')),  # Include all URLs from the dashboard app
+    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
 ]
