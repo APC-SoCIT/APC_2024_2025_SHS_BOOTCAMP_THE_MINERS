@@ -37,4 +37,5 @@ urlpatterns = [
     path('user-profile/', views.user_profile, name='user_profile'),  # User's own profile
     path('', include('dashboard.urls')),  # Include all URLs from the dashboard app
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
+    path('profile/<int:tutor_id>/', views.profile, name='profile')
 ]
