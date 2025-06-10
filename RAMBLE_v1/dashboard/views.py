@@ -37,9 +37,9 @@ def login_view(request):
 def user_profile(request):
     return render(request, 'dashboard/user-profile.html')
 
-# --- Tutor profile page (for booking etc.) ---
+# tutor profile page (for booking etc.) 
 def profile(request, tutor_id=None):
-    # Shows a tutor's profile and handles booking form submission on the same page
+    # shows a tutors profile and handles booking form submission on the same page
     tutor = get_object_or_404(Tutor, id=tutor_id) if tutor_id else None
     if request.method == 'POST' and tutor:
         form = BookingForm(request.POST)
@@ -48,7 +48,6 @@ def profile(request, tutor_id=None):
             booking.tutor = tutor
             booking.student = request.user
             booking.save()
-            # Optionally send email here
             messages.success(request, "Booking request sent!")
             return redirect('profile', tutor_id=tutor.id)
     else:
@@ -65,10 +64,9 @@ def sign_up(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)  # Create user object but don't save yet
+            user = form.save(commit=False)  # create user object but don't save yet
             user.set_password(form.cleaned_data['password'])  # Hash the password
-            user.save()  # Save user to database
-            # If the user checked "Register as Tutor", create a Tutor entry
+            user.save()
             if form.cleaned_data.get('is_tutor'):
                 tutor = Tutor.objects.create(
                     user=user,
