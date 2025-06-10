@@ -7,63 +7,60 @@
         "Hey",
         "How are you",
         "Is anyone there?",
+        "Hello!",
+        "Good day",
+        "Good day!",
         "Hello",
         "Good day"
       ],
       "responses": [
-        "gurt: yo",
-        "gurt:"
+        "Hello! How may i help you?",
+        "Hi! How may i assist you?"
       ]
     },
     {
       "tag": "goodbye",
       "patterns": ["Bye", "See you later", "Goodbye"],
       "responses": [
-        "See you later, thanks for visiting",
-        "Have a nice day",
-        "Bye! Come back again soon."
+        "See you later! Thanks for visiting!",
+        "Farewell! Have a nice day!",
+        "Bye! Come back again soon!"
       ]
     },
     {
       "tag": "thanks",
       "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "responses": ["Happy to help!", "Any time!", "My pleasure!"]
     },
     {
-      "tag": "items",
+      "tag": "navigate",
       "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
+        "How do i navigate the website?",
+        "How do i navigate the app?",
+        "Where can we book a tutor?"
       ],
       "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
+        "You can access the different pages from the top bar."
       ]
     },
     {
-      "tag": "payments",
+      "tag": "name",
       "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
-        "Can I pay with Paypal?",
-        "Are you cash only?"
+        "Whats your name?",
+        "What's your name??"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "I simply go by The Ramble Wizard!"
       ]
     },
     {
-      "tag": "delivery",
+      "tag": "data",
       "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
+        "What do you do with my data?",
+        "What happens to my data??",
       ],
       "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
+        "Since this is only a project, your data will be deleted after 30 days."
       ]
     },
     {
@@ -78,15 +75,14 @@
       ]
     },
     {
-      "tag": "funny",
+      "tag": "booking",
       "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
+        "How do I book a tutor?",
+        "How do i get someone to teach me?",
+        "Where can i get a tutor?"
       ],
       "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "In the tutors page, you can select a tutor from the list given by our app, when you select a tutor, you can define the time and date you want the session to begin, Hope this helps!."
       ]
     }
   ]
