@@ -40,14 +40,13 @@
   
   /* Main content area */
   .main-content {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 4rem;
-    overflow: hidden;
-  }
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 4rem;
+}
   
   .background-image {
     position: absolute;
@@ -114,7 +113,7 @@
     font-size: 1.2rem;
   }
   
-.phone-group {
+  .phone-group {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -169,16 +168,13 @@
   
   /* Bottom bar */
   .bottom-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0f001c;
-    text-align: center;
-    font-size: 0.8rem;
-    padding: 6px;
-    z-index: 2;
-  }
+  background-color: #0f001c;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 6px;
+  z-index: 100;
+  width: 100%;
+}
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -195,4 +191,3 @@
       font-size: 1rem;
     }
   }
-  

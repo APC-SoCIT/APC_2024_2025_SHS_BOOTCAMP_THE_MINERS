@@ -57,7 +57,7 @@
       "tag": "data",
       "patterns": [
         "What do you do with my data?",
-        "What happens to my data??",
+        "What happens to my data??"
       ],
       "responses": [
         "Since this is only a project, your data will be deleted after 30 days."
