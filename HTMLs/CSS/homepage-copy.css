@@ -6,35 +6,25 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #0e1c2b, #3d5570);
+  background-color: #17233B;
   color: white;
   min-height: 100vh;
 }
 
 .container {
-  background: linear-gradient(to bottom, #0e1c2b, #2e4157);
+  background-color: #F9F7F1;
   border-radius: 20px;
   max-width: 1920px;
   padding: 30px; 
   margin-left: 125px;
   margin-right: 125px;
-  padding-bottom: 13rem;
-}
-
-.forum {
-  font-size: 35px;
-  padding-top: 20px;
-}
-
-.forum-posts {
-  background-color: #2d3f54;
-  border-radius: 30px;
-  padding: 100px;
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  padding-bottom: 6.4rem;
+  color: #000000;
 }
 
 .header {
-  background-color: #0f001c;
+  background-color: #17233B;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,6 +102,14 @@ body {
 .tagline {
   font-size: 4rem;
   margin-bottom: 1rem;
+  color: #111A2C;
+}
+
+.tagline-2 {
+  font-size: 4rem;
+  margin-top: 15px;
+  margin-bottom: 1rem;
+  color: #111A2C;
 }
 
 .quick-nav {
@@ -124,16 +122,18 @@ body {
 }
 
 .nav-button {
-  background: linear-gradient(to bottom, #0d1720, #1a2431);
+  background-color: rgb(23, 35, 59);
   padding: 3.5rem;
-  border-radius: 35px;
+  border-radius: 3rem;
   text-align: center;
   flex: 1;
-  font-size: 35px;
+  font-size: 45px;
   cursor: pointer;
   margin-right: 1rem;
   margin-left: 1rem;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  color: #F9F7F1;
 }
 
 .nav-button:hover {
@@ -150,7 +150,7 @@ body {
 .subject {
   padding: 10;
   border-radius: 16px;
-  font-size: 1.4rem;
+  font-size: 45px;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -159,6 +159,8 @@ body {
   min-height: 80px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  color: #111A2C;
 }
 
 .subject:hover {
