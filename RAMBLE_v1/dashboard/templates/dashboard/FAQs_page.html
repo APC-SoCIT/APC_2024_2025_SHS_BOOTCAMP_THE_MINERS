@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAMble Dashboard</title>
+  
+  <!-- this loads local CSS file with django static -->
+  <link rel="stylesheet" href="{% static 'dashboard/css/FAQs_page.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="main-header">
+    <!-- Header -->
+    <div class="header">
+      <div class="user-info">
+        <img src="https://i.pravatar.cc/40" alt="User Avatar">
+        <span>Welcome, {{ user.first_name|default:user.username }}!</span>
+      </div>
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" class="search-input" placeholder="Search">
+      </div>
+      <div class="icons">
+        <a href="{% url 'homepage' %}" class="buttons">🏠</a>
+        <a href="{% url 'tutor' %}" class="buttons">👨‍🏫</a>
+        <a href="{% url 'ramble_wizard' %}" class="buttons">🧙</a>
+        <div class="dropdown">
+          <div class="buttons dropdown-toggle" id="settingsDropdown">⚙️</div>
+          <div class="dropdown-menu" id="dropdownMenu" style="display:none;">
+            <a href="{% url 'user_profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="container">
+    <!-- Tagline -->
+        <h1 class="label"><center>FAQS</center></h1>
+        <h1 class="tagline"><center>Frequently Asked Questions</center></h1>
+        <h2 class="desc"><center>Here are some common questions about RAMble</center></h2>
+
+        <div class="faq-layout">
+            <!-- FAQ List -->
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is RAMble?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        RAMble is a tutoring app designed to help students find tutors and get academic help.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I book a tutor?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can visit the Tutors page and schedule a session with an available tutor.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I review a tutor after a session?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. After each session, you’ll be asked to rate and review your tutor to help others choose better.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods are accepted?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! You can apply through the tutor registration process available on the site.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much does a tutoring session cost?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The cost of a session depends on the tutor you select. Many tutors offer student-friendly rates, and the full price will always be displayed prior to confirming your booking.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if I miss a session?
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        If you happen to miss a session, you may request to reschedule depending on your tutor's availability. If you need further assistance, feel free to contact us anytime.
+                    </div>
+                </div>
+
+                <div class="faq-navigation">
+                    <button class="faq-nav-button">< Back</button>
+                    <button class="faq-nav-button">Next ></button>
+                </div>
+
+            </div>
+
+            <!-- More Questions Box -->
+            <div class="more-questions-box">
+                <img src="icons8-chat-96.png" alt="Chat Icon" class="faq-icon-image" />
+                <h3><center>Still have more questions?</center></h3>
+                <h1><center>If you can't find what you're looking for, feel free to contact us for further assistance.</center></h1>
+                <button class="contact-button">Contact Us</button>
+            </div>  
+
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownToggle = document.getElementById('settingsDropdown');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  dropdownToggle.addEventListener('click', function(e) {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    e.stopPropagation();
+  });
+  document.addEventListener('click', function() {
+    dropdownMenu.style.display = 'none';
+  });
+});
+  </script>
+
+  
+</body>
+</html>
