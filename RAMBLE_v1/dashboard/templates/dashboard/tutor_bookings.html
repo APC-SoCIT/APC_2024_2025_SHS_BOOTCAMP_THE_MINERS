@@ -1,49 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <title>Your Bookings</title>
     <style>
         table { border-collapse: collapse; width: 80%; margin: 40px auto; }
         th, td { border: 1px solid #ccc; padding: 10px 16px; text-align: left; }
-        th { background: #f4f4f4; }
+
     </style>
+      <link rel="stylesheet" href="{% static 'dashboard/css/booking.css' %}">
 </head>
 <body>
-    <h1 style="text-align:center;">Your Bookings</h1>
-    <table>
-        <tr>
-            <th>Student</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
+    <h1>My Bookings</h1>
+    <div class="cards-container">
         {% for booking in bookings %}
-        <tr>
-            <td>{{ booking.student.get_full_name|default:booking.student.username }}</td>
-            <td>{{ booking.date }}</td>
-            <td>{{ booking.time }}</td>
-            <td>{{ booking.status|title }}</td>
-            <td>
+        <div class="card {% if booking.status == 'pending' %}pending{% elif booking.status == 'accepted' %}accepted{% elif booking.status == 'declined' %}declined{% endif %}">
+            <div class="card-content">
+                <div>
+                    <label>Student:</label>
+                    <span>{{ booking.student.get_full_name|default:booking.student.username }}</span>
+                </div>
+                <div>
+                    <label>Date:</label>
+                    <span>{{ booking.date }}</span>
+                </div>
+                <div>
+                    <label>Time:</label>
+                    <span>{{ booking.time }}</span>
+                </div>
+                <div>
+                    <label>Status:</label>
+                    <span>{{ booking.status|title }}</span>
+                </div>
+            </div>
+            <div class="card-actions">
                 {% if booking.status == "pending" %}
                 <form method="post" style="display:inline;">
                     {% csrf_token %}
                     <input type="hidden" name="booking_id" value="{{ booking.id }}">
-                    <button type="submit" name="action" value="accept">Accept</button>
-                    <button type="submit" name="action" value="decline">Decline</button>
+                    <button type="submit" name="action" value="accept" class="accept">Accept</button>
+                    <button type="submit" name="action" value="decline" class="decline">Decline</button>
                 </form>
-                {% else %}
-                    <!-- Show nothing or a dash for accepted/declined -->
-                    -
                 {% endif %}
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="5">No bookings yet.</td>
-        </tr>
+            </div>
+        </div>
         {% endfor %}
-    </table>
+    </div>
 </body>
 </html>

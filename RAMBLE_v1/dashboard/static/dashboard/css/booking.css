@@ -9,11 +9,16 @@ body {
   background: linear-gradient(to bottom, #0e1c2b, #3d5570);
   color: white;
   min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 44px; 
 }
 
 .container {
@@ -29,6 +34,97 @@ a {
 .filter-icon {
   padding-left: 10px;
   cursor: pointer;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 20px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+  color: white; 
+}
+
+.card.pending {
+  background-color: rgba(0, 0, 0, 0.521);
+}
+
+.card.accepted {
+  background-color: rgba(0, 128, 0, 0.534);
+}
+
+.card.declined {
+  background-color: rgba(255, 0, 0, 0.582);
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+}
+
+.card-content div {
+  flex: 1 1 50%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-content div label {
+  font-weight: bold;
+}
+
+.card-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form {
+  display: inline;
+}
+
+button {
+  margin: 0 5px; 
+}
+
+button.accept {
+  background-color: transparent; 
+  color: green; 
+  border: 2px solid green; 
+  border-radius: 8px; 
+  padding: 8px 16px;
+  cursor: pointer; 
+  font-size: 14px; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.accept:hover {
+  background-color: green;
+  color: white;
+}
+
+button.decline {
+  background-color: transparent; 
+  color: red; 
+  border: 2px solid red; 
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer; 
+  font-size: 14px; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button.decline:hover {
+  background-color: red; 
+  color: white; 
 }
 
 .header {
@@ -225,34 +321,5 @@ a.nav-button:hover,
 a.nav-button:active {
   text-decoration: none;
   color: white;
-}
-
-/* Simple dropdown styling */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #222;
-  min-width: 120px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 100;
-  border-radius: 8px;
-}
-
-.dropdown-menu a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  border-radius: 8px;
-}
-
-.dropdown-menu a:hover {
-  background-color: #444;
 }
 
