@@ -53,9 +53,10 @@
                     <div class="faq-question">
                         What is RAMble?
                         <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
+                    
+                      <div class="faq-answer">
                         RAMble is a tutoring app designed to help students find tutors and get academic help.
+                      </div>
                     </div>
                 </div>
 
@@ -63,9 +64,10 @@
                     <div class="faq-question">
                         How do I book a tutor?
                         <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        You can visit the Tutors page and schedule a session with an available tutor.
+
+                        <div class="faq-answer">
+                          You can visit the Tutors page and schedule a session with an available tutor.
+                        </div>
                     </div>
                 </div>
 
@@ -73,9 +75,10 @@
                     <div class="faq-question">
                         Can I review a tutor after a session?
                         <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes. After each session, you’ll be asked to rate and review your tutor to help others choose better.
+      
+                        <div class="faq-answer">
+                          Yes. After each session, you’ll be asked to rate and review your tutor to help others choose better.
+                        </div>
                     </div>
                 </div>
 
@@ -83,33 +86,32 @@
                     <div class="faq-question">
                         What payment methods are accepted?
                         <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes! You can apply through the tutor registration process available on the site.
+
+                        <div class="faq-answer">
+                          Yes! You can apply through the tutor registration process available on the site.
+                        </div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         How much does a tutoring session cost?
                         <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        The cost of a session depends on the tutor you select. Many tutors offer student-friendly rates, and the full price will always be displayed prior to confirming your booking.
+
+                        <div class="faq-answer">
+                          The cost of a session depends on the tutor you select. Many tutors offer student-friendly rates, and the full price will always be displayed prior to confirming your booking.
+                    
+                        </div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         What if I miss a session?
                         <span class="icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        If you happen to miss a session, you may request to reschedule depending on your tutor's availability. If you need further assistance, feel free to contact us anytime.
-                    </div>
-                </div>
 
-                <div class="faq-navigation">
-                    <button class="faq-nav-button">< Back</button>
-                    <button class="faq-nav-button">Next ></button>
+                        <div class="faq-answer">
+                          If you happen to miss a session, you may request to reschedule depending on your tutor's availability. If you need further assistance, feel free to contact us anytime.
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -119,9 +121,21 @@
                 <img src="icons8-chat-96.png" alt="Chat Icon" class="faq-icon-image" />
                 <h3><center>Still have more questions?</center></h3>
                 <h1><center>If you can't find what you're looking for, feel free to contact us for further assistance.</center></h1>
-                <button class="contact-button">Contact Us</button>
-            </div>  
 
+                <div class="contact-wrapper">
+                  <div class="email-info">
+                    <h4>Email Us</h4>
+                    <p>support@rambleapp.com</p>
+                    <p>help@rambleapp.com</p>
+                  </div>
+
+                  <div class="phone-info">
+                    <h4>Contact Us</h4>
+                      <p>+63 945 421 6699</p>
+                      <p>+63 973 551 2531</p>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -140,6 +154,23 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdownMenu.style.display = 'none';
   });
 });
+
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach((question) => {
+    const icon = question.querySelector('.icon'); 
+    const answer = question.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+        icon.textContent = '+';
+      } else {
+        answer.style.display = 'block';
+        icon.textContent = '–';
+      }
+    });
+  });
   </script>
 
   
