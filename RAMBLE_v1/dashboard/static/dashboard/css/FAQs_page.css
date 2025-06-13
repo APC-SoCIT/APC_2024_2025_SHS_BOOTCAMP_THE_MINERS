@@ -11,6 +11,11 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   background: linear-gradient(to bottom, #0e1c2b, #2e4157);
   border-radius: 20px;
