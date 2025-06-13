@@ -103,6 +103,9 @@ def tutor_by_subject(request, subject_id):
         'selected_subject': subject,
     })
 
+def faqs_page(request):
+    return render(request, 'dashboard/FAQs_page.html')
+
 # --- Book a tutor (separate booking page, not used if booking is on profile page) ---
 @login_required
 def book_tutor(request, tutor_id):
