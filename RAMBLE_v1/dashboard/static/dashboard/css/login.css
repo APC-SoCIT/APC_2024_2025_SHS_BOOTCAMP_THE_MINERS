@@ -28,8 +28,8 @@ body {
 }
 
 .sign-up-btn {
-  background: white;
-  color: #17233B;
+  background: #F9F7F1;
+  color: #000;
   border-radius: 50px;
   padding: 0.5rem 1.5rem;
   font-weight: bold;
