@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #0e1c2b, #3d5570);
+  background: #17233B;
   color: white;
   min-height: 100vh;
 }
@@ -17,12 +17,13 @@ a {
 }
 
 .container {
-  background: linear-gradient(to bottom, #0e1c2b, #2e4157);
+  background: white;
   border-radius: 40px;
   max-width: 1300px; 
   padding: 10px;     
   margin: 0 auto;
 }
+
 
 .banner-img {
   width: 100%;
@@ -41,7 +42,7 @@ a {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 40px 40px;
   padding: 40px;      
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -92,13 +93,13 @@ a {
 
 .username {
   font-size: 1.4em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   opacity: 60%;
 }
 
 .user-email {
   font-size: 1.2em;
-  color: rgb(255, 255, 255);
+  color: rgb(38, 0, 255)
 }
 
 .joined-date {

@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #0e1c2b, #3d5570);
+  background: #17233B;
   color: white;
   min-height: 100vh;
 }
@@ -17,7 +17,7 @@ a {
 }
 
 .container {
-  background: linear-gradient(to bottom, #0e1c2b, #2e4157);
+  background: white;
   border-radius: 40px;
   max-width: 1300px; 
   padding: 10px;     
@@ -25,7 +25,7 @@ a {
 }
 
 .profile-banner {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.027);
   border-radius: 40px;
   padding: 5px;
   text-align: left;
@@ -39,6 +39,7 @@ a {
 }
 
 .split-container {
+
   display: flex;
   gap: 20px;            /* a bit more gap */
   align-items: stretch;
@@ -49,7 +50,7 @@ a {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 40px 40px;
   padding: 40px;      
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -82,12 +83,12 @@ a {
 
 .rate {
   font-size: 1.2em;
-  color: rgb(163, 141, 17);
+  color: rgb(151, 116, 0);
   margin: 10px 0;
 }
 
 .stars {
-  color: gold;
+  color: rgb(151, 116, 0);
   font-size: 1.2em;
 }
 
@@ -180,7 +181,7 @@ a {
 }
 
 .buttons:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.082);
   border-radius: 10px;
 }
 

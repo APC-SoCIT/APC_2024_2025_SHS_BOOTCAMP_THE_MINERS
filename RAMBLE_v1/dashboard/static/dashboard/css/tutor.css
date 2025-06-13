@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #0e1c2b, #3d5570);
+  background-color: #17233B;
   color: white;
   min-height: 100vh;
 }
@@ -17,13 +17,14 @@ a {
 }
 
 .container {
-  background: linear-gradient(to bottom, #0e1c2b, #2e4157);
+  background-color: #F9F7F1;
   border-radius: 20px;
   max-width: 1920px;
   padding: 30px; 
   margin-left: 125px;
   margin-right: 125px;
   padding-bottom: 13rem;
+  color: #000000;
 }
 
 .filter-icon {
@@ -134,12 +135,12 @@ a {
 .tutor-card {
   display: flex;
   align-items: center;
-  background-color: #1b2636;
+  background-color: #17233B;
   border-radius: 16px;
   padding: 16px;
   width: 100%;
   max-width: 500px;
-  color: #fff;
+  color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   gap: 16px;
   transition: transform 0.3s ease;

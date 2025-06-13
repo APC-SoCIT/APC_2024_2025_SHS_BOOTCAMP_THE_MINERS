@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #0e1c2b, #3d5570);
+    background-color: #17233B;
     color: white;
     min-height: 100vh;
 }
@@ -17,7 +17,7 @@ a {
 }
 
 .container {
-    background: linear-gradient(to bottom, #0e1c2b, #2e4157);
+    background-color: #F9F7F1;
     border-radius: 20px;
     max-width: 1920px;
     padding: 10px; 
@@ -32,7 +32,7 @@ a {
 }
 
 .forum-posts {
-    background-color: #2d3f54;
+    background-color: #ffffff;
     border-radius: 30px;
     padding: 100px;
     margin-top: 20px;
@@ -70,7 +70,7 @@ a {
     background-color: transparent; 
     width: 100%;              
     font-size: 16px;          
-    color: #333;             
+    color: #000000;             
 }
 
 .search-input::placeholder {
@@ -151,7 +151,7 @@ a {
 .chat-input {
     display: flex;
     justify-content: center;
-    background: #0f172a;
+    background: #dbdbdb;
     border-radius: 25px;
     padding: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -166,14 +166,14 @@ a {
     outline: none;
     padding: 5px;
     background: transparent;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
 }
 
 .send-btn {
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
     cursor: pointer;
 }
@@ -183,6 +183,7 @@ a {
     padding-left: 35px;
     padding-top: 15px;
     padding-bottom: 20px;
+    color: black;
 }
 
 /* Simple dropdown styling */
