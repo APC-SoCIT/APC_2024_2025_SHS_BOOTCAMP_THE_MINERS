@@ -1,40 +1,35 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login to RAMble</title>
-  <link rel="stylesheet" href="{% static 'dashboard/css/login.css' %}" />
+  <link rel="stylesheet" href="CSS/login.css" />
 </head>
 
 <body>
 
   <!-- Top Bar -->
   <header class="top-bar">
-    <img class="logo" src="{% static 'dashboard/images/logo.png' %}" alt="Logo" />
-    <a href="{% url 'sign_up' %}" class="sign-up-btn">Sign Up</a>
+    <img class="logo" src="C:\Users\USER\Documents\GitHub\APC_2024_2025_SHS_BOOTCAMP_THE_MINERS\HTMLs\images\logo.png" alt="Logo" />
+    <a href="sign_up" class="sign-up-btn">Sign Up</a>
   </header>
 
   <!-- Main Content -->
   <main class="main-content">
-    <img class="background-image" src="{% static 'dashboard/images/background.png' %}" alt="Background" />
+    <img class="background-image" src="C:\Users\USER\Documents\GitHub\APC_2024_2025_SHS_BOOTCAMP_THE_MINERS\HTMLs\images\background.png" alt="Background" />
 
     <section class="login-form">
-      <h1 class="log-in-title">Log In</h1>
-
+      <h1 class="log-in-title">Log In</h1><br>
+      
   <!-- Show error message if login failed -->
-  {% if error %}
-    <p class="error-message" style="color: red; font-weight: bold;">{{ error }}</p>
-  {% endif %}
+    <p class="error-message" style="color: red; font-weight: bold;"></p>
 
     <p class="welcome-message">Welcome back! Please log in to your account.</p>
 
     <form method="POST" action="">
-    {% csrf_token %}
 
-       <div class="input-group">
+      <div class="input-group">
         <label for="username_or_email">Username or Email</label>
         <input id="username_or_email" name="username" type="text" placeholder="Enter your username or email" required />
       </div>
@@ -45,7 +40,7 @@
       </div>
 
       <p class="privacy-policy">By logging in, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</p><br>
-
+    
       <button class="next-btn" type="submit">Next</button>
     </section>
   </main>

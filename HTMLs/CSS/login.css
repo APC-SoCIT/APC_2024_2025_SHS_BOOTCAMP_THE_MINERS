@@ -74,6 +74,7 @@
     box-shadow: 0 0 16px rgba(0,0,0,0.3);
   }
   
+  
   .log-in-title {
     color: #F9F7F1;
     text-align: center;
@@ -122,6 +123,8 @@
     cursor: pointer;
     font-size: 1rem;
   }
+
+  
   
   /* Bottom bar */
   .bottom-bar {
