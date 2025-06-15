@@ -106,6 +106,16 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdownMenu.style.display = 'none';
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tagline = document.querySelector(".tagline");
+
+  tagline.classList.remove("animate");
+
+  void tagline.offsetWidth;
+
+  tagline.classList.add("animate");
+});
 </script>
   
 </body>
