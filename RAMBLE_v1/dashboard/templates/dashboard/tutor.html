@@ -50,10 +50,7 @@
             <i class="fas fa-search search-icon"></i>
             <input type="text" class="search-input" placeholder="Search tutors" />
         </div>
-        <div class="filter-icon">
-            <i class="fa fa-filter filter-icon"></i>
-        </div>
-        </div>
+      </div>
 
         <hr>
 
@@ -99,6 +96,16 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function() {
     dropdownMenu.style.display = 'none';
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tagline = document.querySelector(".tagline");
+
+  tagline.classList.remove("animate");
+
+  void tagline.offsetWidth;
+
+  tagline.classList.add("animate");
 });
 </script>
 

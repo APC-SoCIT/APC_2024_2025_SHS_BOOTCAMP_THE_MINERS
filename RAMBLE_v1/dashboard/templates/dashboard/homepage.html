@@ -46,8 +46,8 @@
 
     <!-- Quick Navigation -->
     <div class="quick-nav">
-      <a href="{% url 'tutor' %}" class="nav-button">👨‍🏫<br>Tutors</a>
-      <a href="{% url 'ramble_wizard' %}"  class="nav-button">🧙‍♂️<br>RAMble Wizard</a>
+      <a href="{% url 'tutor' %}" class="nav-button tutor-button"><span>Tutors</span></a>
+      <a href="{% url 'ramble_wizard' %}" class="nav-button wizard-button"><span>RAMble Wizard</span></a>
     </div>
 
     <hr>
@@ -80,6 +80,26 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function() {
     dropdownMenu.style.display = 'none';
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tagline = document.querySelector(".tagline");
+
+  tagline.classList.remove("animate");
+
+  void tagline.offsetWidth;
+
+  tagline.classList.add("animate");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tagline = document.querySelector(".tagline-2");
+
+  tagline.classList.remove("animate");
+
+  void tagline.offsetWidth;
+
+  tagline.classList.add("animate");
 });
   </script>
 

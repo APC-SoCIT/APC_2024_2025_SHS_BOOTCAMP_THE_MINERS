@@ -6,9 +6,24 @@
 }
 
 body {
-  background-color: #17233B;
-  color: white;
+  background: linear-gradient(45deg,#B5C7E6,#F9D2E4,#D1EADD,#B5BDE1);
+  color: black;
+  background-size: 300%;
+  animation: color 30s ease-in-out infinite;
   min-height: 100vh;
+}
+
+@keyframes color {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+hr {
+  border: none; 
+  height: 4px; 
+  background-color: #000; 
+  margin: 20px 0; 
 }
 
 a {
@@ -17,7 +32,7 @@ a {
 }
 
 .container {
-  background-color: #F9F7F1;
+  background-color: #1e1e2f4b;
   border-radius: 20px;
   max-width: 1920px;
   padding: 30px; 
@@ -28,30 +43,34 @@ a {
 }
 
 .filter-icon {
+  color: white;
   padding-left: 10px;
   cursor: pointer;
 }
 
 .header {
-  background-color: #0f001c;
+  background-color: #ebf1fd;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
   padding-top: 20px;
   padding-bottom: 20px;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .search-container {
   display: flex; 
   align-items: center; 
-  background-color: #e0e0e0; 
-  border-radius: 50px;      
-  padding: 10px 20px;      
+  background-color: #ffffff; 
+  border: 3px solid #100133;
+  border-radius: 9999px;   
+  padding: 0.75rem 1.5rem;   
   width: 100%;              
-  max-width: 750px;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 750px;      
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1rem;
 }
 
 .search-icon {
@@ -119,8 +138,17 @@ a {
 }
 
 .tagline {
-  font-size: 4rem;
+  font-size: 90px;
   margin-bottom: 1rem;
+  color: #111A2C;
+  opacity: 0; /* Initially hidden */
+  transform: translateX(-50px); /* Start slightly off-screen */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
+.tagline.animate {
+  opacity: 1; /* Fully visible */
+  transform: translateX(0); /* Slide into position */
 }
 
 .tutor-grid {
@@ -135,12 +163,12 @@ a {
 .tutor-card {
   display: flex;
   align-items: center;
-  background-color: #17233B;
+  background-color: #ffffff;
   border-radius: 16px;
   padding: 16px;
   width: 100%;
   max-width: 500px;
-  color: #ffffff;
+  color: rgb(1, 6, 77);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   gap: 16px;
   transition: transform 0.3s ease;
@@ -148,6 +176,7 @@ a {
 
 .tutor-card:hover {
   transform: translateY(-5px);
+  background-color: #e7e5f8;
 }
 
 .tutor-image {
@@ -196,16 +225,10 @@ a {
   padding-top: 30px;
 }
 
-.subject:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  transform: translateY(-5px);
-}
-
 .subject {
-  padding: 10;
+  background-color: #ffffff;
   border-radius: 16px;
-  font-size: 1.4rem;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -214,12 +237,22 @@ a {
   min-height: 80px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  color: #111A2C;
+  margin: 10px;
+  padding: 10px;
+  border: 5px solid #05001b;
+}
+
+.subject:hover {
+  background-color: #ebf1fd;
+  transform: translateY(-5px);
+  border: 5px solid #0b0047;
 }
 
 .subject span {
-  font-size: 30px;
+  font-size: 28px;
 }
-
 a.nav-button:link,
 a.nav-button:visited,
 a.nav-button:hover,
@@ -235,10 +268,11 @@ a.nav-button:active {
 }
 
 .dropdown-menu {
+  font-size: 50px;
   display: none;
   position: absolute;
   right: 0;
-  background-color: #222;
+  background-color: #ffffff;
   min-width: 120px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 100;
@@ -246,7 +280,7 @@ a.nav-button:active {
 }
 
 .dropdown-menu a {
-  color: white;
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -254,6 +288,18 @@ a.nav-button:active {
 }
 
 .dropdown-menu a:hover {
-  background-color: #444;
+  background-color: #e4e3fc;
 }
 
+/* Calendar and Time Input Styles */
+.calendar-container, .time-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
