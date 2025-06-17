@@ -25,6 +25,8 @@ from django.contrib import admin
 from django.urls import path, include
 from dashboard import views  # Import views for direct mapping
 from django.contrib.auth.views import LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Django admin
@@ -39,5 +41,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('profile/<int:tutor_id>/', views.profile, name='profile'),
      path('faqs/', views.faqs_page, name='faqs_page')
-    
-]
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -18,6 +18,8 @@ class Tutor(models.Model):
     rate_per_hour = models.DecimalField(max_digits=6, decimal_places=2)
     subjects = models.ManyToManyField(Subject, related_name='tutors')
     about = models.TextField(blank=True, default='This tutor has not added a description yet.')
+    profile_picture = models.ImageField(upload_to='tutor_profiles/', blank=True, null=True)
+    # ...other fields...
 
     def __str__(self):
         return self.full_name

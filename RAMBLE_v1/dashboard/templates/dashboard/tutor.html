@@ -70,7 +70,11 @@
             {% for tutor in tutors %}
             <a href="{% url 'tutor_profile' tutor.id %}" class="tutor-card-link">
                 <div class="tutor-card">
-                    <img src="https://i.pravatar.cc/40" alt="{{ tutor.full_name }}" class="tutor-image" />
+                {% if tutor.profile_picture %}
+                <img src="{{ tutor.profile_picture.url }}" alt="{{ tutor.name }}'s Profile Picture" class="tutor-image">
+                {% else %}
+                <img src="https://i.pravatar.cc/40" alt="Default Profile Picture" class="tutor-image">
+                {% endif %}
                     <div class="tutor-info">
                         <h3 class="tutor-name">{{ tutor.full_name }}</h3>
                         <p class="tutor-role">{{ tutor.user.get_full_name }}</p>
