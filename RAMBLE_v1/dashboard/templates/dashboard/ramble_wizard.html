@@ -42,7 +42,7 @@
     <div class="container">
         <h1 class="tagline"><center>Ramble Wizard 🧙 The AI Chatbot</center></h1> <!--Tagline-->
         <div class="bot-intro">
-            Hello Jacques, I am your virtual assistant.<br>
+            Hello {{ user.first_name|default:user.username }}, I am your virtual assistant.<br>
             How may I assist you today?<br>
             <br>
             You may ask me about specific academic challenges you're facing<br>
