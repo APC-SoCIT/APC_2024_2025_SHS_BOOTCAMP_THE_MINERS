@@ -45,7 +45,11 @@
       <img src="https://img.wattpad.com/7ec4ab818fa8de6107b9d679bd2497b8214b9f7d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f304678737562746770695f4271513d3d2d313238373734323636322e313732386564386238663237666434653935383133343532373633342e6a7067" alt="Profile Banner" class="banner-img">
       <div class="split-container">
         <div class="left-card">
-          <img src="https://i.pravatar.cc/40" class="avatar" />
+                {% if tutor.profile_picture %}
+                <img src="{{ tutor.profile_picture.url }}" alt="{{ tutor.name }}'s Profile Picture" class="avatar">
+                {% else %}
+                <img src="https://i.pravatar.cc/40" alt="Default Profile Picture" class="avatar">
+                {% endif %}
             <h1>{{ tutor.full_name }}</h1>
           <p>{{ tutor.user.email }}</p>
           <p>{{ tutor.user.get_full_name }}</p>
